@@ -1,0 +1,88 @@
+site_name: Green API
+repo_name: green-api/docs-v2 
+repo_url: https://github.com/green-api/docs-v2
+edit_uri: edit/master/ru/docs/
+site_dir: build
+site_url: https://green-api.com
+
+nav:
+    - 'На главную': '/'
+    - 'Оглавление': 'index.md'
+    - 'Документация API':
+        - 'Обзор': 'api/index.md'
+        - 'Отправка':
+            - 'Отправить текст': 'api/sending/send-text.md'
+            # - 'Отправить медиаданные': 'api/sending/send-media.md'
+            - 'Отправить рассылку': 'api/sending/send-broadcast.md'
+            # - 'Отправить геолокацию': 'api/sending/send-location.md'
+            # - 'Отправить контакт': 'api/sending/send-contact.md'
+    
+theme:
+  name: material
+  custom_dir: overrides
+
+   # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: ru
+  palette:
+    scheme: default
+    primary: green
+    accent: green
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/green-api-logo.png
+
+extra_css:
+  - stylesheets/styles.css
+  - stylesheets/extra.css
+  
+# Plugins
+plugins:
+  - search:
+      lang:
+        - en
+        - ru
+  - minify:
+      minify_html: true
+
+# Extensions
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.attr_list
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink:  "#"
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  # - pymdownx.highlight:
+  #     linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde

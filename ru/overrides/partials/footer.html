@@ -1,0 +1,152 @@
+<!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+{% import "partials/language.html" as lang with context %}
+
+<!-- Application footer -->
+<footer class="md-footer mdl-mega-footer sg-footer" style="height: inherit">
+
+  <!-- Link to previous and/or next page -->
+  {% if page.previous_page or page.next_page %}
+    <div class="md-footer-nav">
+      <nav
+        class="md-footer-nav__inner md-grid"
+        aria-label="{{ lang.t('footer.title') }}"
+      >
+
+        <!-- Link to previous page -->
+        {% if page.previous_page %}
+          <a
+            href="{{ page.previous_page.url | url }}"
+            title="{{ page.previous_page.title | striptags }}"
+            class="md-footer-nav__link md-footer-nav__link--prev"
+            rel="prev"
+          >
+            <div class="md-footer-nav__button md-icon">
+              {% include ".icons/material/arrow-left.svg" %}
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  {{ lang.t("footer.previous") }}
+                </span>
+                {{ page.previous_page.title }}
+              </div>
+            </div>
+          </a>
+        {% endif %}
+
+        <!-- Link to next page -->
+        {% if page.next_page %}
+          <a
+            href="{{ page.next_page.url | url }}"
+            title="{{ page.next_page.title | striptags }}"
+            class="md-footer-nav__link md-footer-nav__link--next"
+            rel="next"
+          >
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  {{ lang.t("footer.next") }}
+                </span>
+                {{ page.next_page.title }}
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              {% include ".icons/material/arrow-right.svg" %}
+            </div>
+          </a>
+        {% endif %}
+      </nav>
+    </div>
+  {% endif %}
+
+<div class="mdl-color-text--grey-700 footer-body" style="font-weight: 500; color: inherit;">
+    <div class="mdl-mega-footer__middle-section">
+
+        <div class="mdl-mega-footer__drop-down-section">
+            
+          <h1 class="mdl-mega-footer__heading">Документация</h1>
+          <ul class="mdl-mega-footer__link-list">
+              <li><a href="/docs/index.html" target="_self">Документация Green API</a></li>
+          </ul>
+        </div>
+
+        <div class="mdl-mega-footer__drop-down-section">
+            
+    
+          <h1 class="mdl-mega-footer__heading">Правовая информация</h1>
+
+          <ul class="mdl-mega-footer__link-list">
+              <li><a href="/info/user-agreement.html" target="_blank">Пользовательское соглашение</a></li>
+              <li><a href="/info/service-agreement.html" target="_blank">Договор оферта</a></li>
+              <li><a href="/info/licence-agreement.html" target="_blank">Лицензионный договор</a></li>
+          </ul>
+
+        </div>
+    </div>
+
+    <div class="mdl-mega-footer__bottom-section" style="height: 56px">
+        <div class="mdl-mega-footer__left-section">
+            <div class="mdl-logo" style="color: #01dc08;">
+                © 2020 GREEN API
+            </div>
+        </div>
+        <div class="mdl-mega-footer__right-section" style="margin-bottom: 0;">
+            <a href="mailto:support@green-api.com" title="mailto:support@green-api.com" class="sb-email-support"><u>support@green-api.com</u></a>
+            <a class="sb-contacts-whatsapp" href="https://wa.me/79057229701" target="_blank">
+                <img alt="Напишите нам по WhatsApp" src="https://green-api.com/whatsapp.svg">
+            </a>
+        </div>
+    </div>
+
+    <div class="mdl-mega-footer__bottom-section">
+      <div class="mdl-mega-footer__left-section">
+          ИП МАРЧЕНКО КРИСТИНА АЛЕКСАНДРОВНА<br>
+          ИНН 713602821887, ОГРНИП 319784700107785<br>
+          Фактический адрес: 192102, Санкт-Петербург, Волковский пр. 32, офис 5-5<br>
+          Телефон: <a href="tel:+79057229701">8-905-722-97-01</a>
+      </div>
+      <div class="footer-payment_line">
+          <span>
+              <img src="https://green-api.com/assets/pay/1.png" alt="mir accept">
+          </span>
+          <span>
+              <img src="https://green-api.com/assets/pay/2.png" alt="mir accept">
+          </span>
+          <span>
+              <img src="https://green-api.com/assets/pay/3.png" alt="mir accept">
+          </span>
+          <span>
+              <img src="https://green-api.com/assets/pay/4.png" alt="mir accept">
+          </span>
+          <span>
+              <img src="https://green-api.com/assets/pay/5.png" alt="mir accept">
+          </span>
+          <span>
+              <img src="https://green-api.com/assets/pay/6.png" alt="mir accept">
+          </span>
+      </div>
+    </div>
+</div>
+
+</footer>
