@@ -16,7 +16,9 @@ nav:
             - 'Отправить рассылку': 'api/sending/send-broadcast.md'
             # - 'Отправить геолокацию': 'api/sending/send-location.md'
             # - 'Отправить контакт': 'api/sending/send-contact.md'
-    
+        - 'Прочее':
+            - 'Идентификатор контакта': 'api/chat-id.md'
+            - 'Стандартные ошибки': 'api/common-errors.md'    
 theme:
   name: material
   custom_dir: overrides

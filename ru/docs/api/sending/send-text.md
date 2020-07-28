@@ -61,11 +61,11 @@ POST https://api.green-api.com/v2/{{account}}/SendText
 ```python
 import requests
 
-url = "https://api.green-api.com/v2/22123456/SendText"
+url = "https://api.green-api.com/v2/{{account}}/SendText"
 
 payload = "{\r\n    \"to\": \"79001234567\",\r\n    \"text\": \"I use Green-API to send this message to you!\"\r\n}"
 headers = {
-  'Authorization': 'Bearer <your api token>',
+  'Authorization': 'Bearer {{apiToken}}',
   'Content-Type': 'application/json'
 }
 
