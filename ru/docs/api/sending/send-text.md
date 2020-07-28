@@ -42,13 +42,13 @@ POST https://api.green-api.com/v2/{{account}}/SendText
 
 Поле | Тип |  Описание
 ----- | ----- | -----
-`messageId ` | **string** | Идентификатор отправленного сообщения 
+`messageId ` | **integer** | Идентификатор отправленного сообщения 
 
 ### Пример тела ответа {#response-example-body}
 
 ```json
 {
-    "messageId": "1234"
+    "messageId": 1234
 }
 ```
 

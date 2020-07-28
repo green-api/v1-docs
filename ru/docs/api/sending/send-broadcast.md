@@ -28,10 +28,10 @@ POST https://api.green-api.com/v2/{{account}}/SendBroadcast
 {
     "name": "Broadcast from Green-API",
     "to": [
-        79001234560,
-        79001234561,
-        79001234562,
-        79001234563],
+        "79001234560",
+        "79001234561",
+        "79001234562",
+        "79001234563"],
     "text": "I use Green-API to send this broadcast to you!",
     "startAt": "2022-03-12 12:00:00"
 }
@@ -49,7 +49,7 @@ POST https://api.green-api.com/v2/{{account}}/SendBroadcast
 
 ```json
 {
-    "broadcastId": "1234"
+    "broadcastId": "5f205403eb8c561bd4a51f27"
 }
 ```
 
@@ -64,7 +64,7 @@ import requests
 
 url = "https://api.green-api.com/v2/{{account}}/SendBroadcast"
 
-payload = "{\r\n    \"name\": \"Broadcast from Green-API\",\r\n    \"to\": [\r\n        79001234560,\r\n        79001234561,\r\n        79001234562,\r\n        79001234563],\r\n    \"text\": \"I use Green-API to send this broadcast to you!\",\r\n    \"startAt\": \"2022-03-12 12:00:00\"\r\n}"
+payload = "{\r\n    \"name\": \"Broadcast from Green-API\",\r\n    \"to\": [\r\n        \"79001234560\",\r\n        \"79001234561\",\r\n        \"79001234562\",\r\n        \"79001234563\"],\r\n    \"text\": \"I use Green-API to send this broadcast to you!\",\r\n    \"startAt\": \"2022-03-12 12:00:00\"\r\n}"
 headers = {
   'Authorization': 'Bearer {{apiToken}}',
   'Content-Type': 'application/json'
