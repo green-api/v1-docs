@@ -14,7 +14,7 @@ POST https://api.green-api.com/v2/{{account}}/SendText
 
 Параметр | Тип | Обязательный | Описание
 ----- | ----- | ----- | -----
-`to` | **string** | Да | [Идентификатор контакта или группы](#)
+`to` | **string** | Да | [Идентификатор контакта или группы](../chat-id.md) - получатель сообщения
 `text ` | **string** | Да | Текст сообщения. Поддерживаются символы emoji 😃 
 
 > Максимальная длина текстового сообщения составляет 4096 символов
@@ -42,7 +42,7 @@ POST https://api.green-api.com/v2/{{account}}/SendText
 
 Поле | Тип |  Описание
 ----- | ----- | -----
-`idMessage ` | **string** | Идентификатор отправленного сообщения 
+`messageId ` | **string** | Идентификатор отправленного сообщения 
 
 ### Пример тела ответа {#response-example-body}
 
@@ -59,7 +59,17 @@ POST https://api.green-api.com/v2/{{account}}/SendText
 ## Пример кода на Python  {#request-example-python}
 
 ```python
-###
-###
-###
+import requests
+
+url = "https://api.green-api.com/v2/22123456/SendText"
+
+payload = "{\r\n    \"to\": \"79001234567\",\r\n    \"text\": \"I use Green-API to send this message to you!\"\r\n}"
+headers = {
+  'Authorization': 'Bearer <your api token>',
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
 ```
