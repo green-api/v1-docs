@@ -16,8 +16,10 @@ nav:
             - 'Отправить рассылку': 'api/sending/send-broadcast.md'
             # - 'Отправить геолокацию': 'api/sending/send-location.md'
             # - 'Отправить контакт': 'api/sending/send-contact.md'
+        - 'Контакты':
+            - 'Добавить контакт': 'api/contacts/add-contact.md'
         - 'Прочее':
-            - 'Идентификатор контакта': 'api/chat-id.md'
+            - 'Идентификатор корреспондента и группы': 'api/chat-id.md'
             - 'Стандартные ошибки': 'api/common-errors.md'    
 theme:
   name: material
