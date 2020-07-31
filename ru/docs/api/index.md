@@ -2,10 +2,13 @@
 
 Green API предоставляет HTTP API WhatsApp для отправки и получения сообщений, файлов, работы с групповыми чатами, отправки рассылок, получения списка контактов и других методов.
 
-## Отправка {#sending}
+## Сообщения {#messages}
 
-- [Отправить текст](sending/send-text.md)
-- [Отправить рассылку](sending/send-broadcast.md)
+- [Текстовые сообщения](messages/text.md)
+
+## Рассылки {#broadcast}
+
+- [Отправить рассылку](messages/send-broadcast.md)
 
 ## Контакты {#contacts}
 

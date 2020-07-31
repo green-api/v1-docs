@@ -10,12 +10,10 @@ nav:
     - 'Оглавление': 'index.md'
     - 'Документация API':
         - 'Обзор': 'api/index.md'
-        - 'Отправка':
-            - 'Отправить текст': 'api/sending/send-text.md'
-            # - 'Отправить медиаданные': 'api/sending/send-media.md'
-            - 'Отправить рассылку': 'api/sending/send-broadcast.md'
-            # - 'Отправить геолокацию': 'api/sending/send-location.md'
-            # - 'Отправить контакт': 'api/sending/send-contact.md'
+        - 'Сообщения':
+            - 'Текстовые сообщения': 'api/messages/text.md'
+        - 'Рассылки':
+            - 'Отправить рассылку': 'api/messages/send-broadcast.md'
         - 'Контакты':
             - 'Добавить контакт': 'api/contacts/add-contact.md'
         - 'Прочее':
