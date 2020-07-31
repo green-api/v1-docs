@@ -46,6 +46,7 @@ POST https://api.green-api.com/v2/{{account}}/messages
 ```json
 {
     "to": "79001234567",
+    "type":"text",    
     "text": {
         "body": "I use Green-API to send this message to you!"
     }    
@@ -56,6 +57,7 @@ POST https://api.green-api.com/v2/{{account}}/messages
 ```json
 {
     "to": "79001234567-1581234048",
+    "type":"text",    
     "text": {
         "body": "I use Green-API to send this message to the Group!"
     }    
@@ -80,14 +82,16 @@ POST https://api.green-api.com/v2/{{account}}/messages
 
 ```json
 {
+    "messages": [
+        {
+            "id": "1234"
+        }
+    ],
     "meta": {
-        "version": "2.0.1",
-        "api_status": "stable"
-    },  
-    "messages": [{
-        "id": "1234"
-    }]
-} 
+        "api_status": "stable",
+        "version": "2.0.1"
+    }
+}
 ```
 
 ### Ошибки {#errors}
@@ -100,15 +104,17 @@ POST https://api.green-api.com/v2/{{account}}/messages
 
 ```json
 {
+    "errors": [
+        {
+            "code": 82,
+            "details": "Outgoing messages limit exceeded",
+            "title": "Превышено колличество исходящих сообщений"
+        }
+    ],
     "meta": {
-        "version": "2.0.1",
-        "api_status": "stable"
-    },
-    "errors": [{
-        "code": 82,    
-        "title": "Outgoing messages limit exceeded",
-        "details": "Превышено колличество исходящих сообщений"
-    }]
+        "api_status": "stable",
+        "version": "2.0.1"
+    }
 }
 ```
 
