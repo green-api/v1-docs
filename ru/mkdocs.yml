@@ -13,7 +13,7 @@ nav:
         - 'Сообщения':
             - 'Текстовые сообщения': 'api/messages/text.md'
         - 'Рассылки':
-            - 'Отправить рассылку': 'api/messages/send-broadcast.md'
+            - 'Массовые рассылки': 'api/broadcast/text.md'
         - 'Контакты':
             - 'Добавить контакт': 'api/contacts/add-contact.md'
         - 'Прочее':
