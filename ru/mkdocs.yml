@@ -15,7 +15,9 @@ nav:
         - 'Рассылки':
             - 'Массовые рассылки': 'api/broadcast/text.md'
         - 'Контакты':
-            - 'Добавить контакт': 'api/contacts/add-contact.md'
+            - 'Добавить контакт': 'api/contacts/add.md'
+            - 'Список контактов': 'api/contacts/list.md'
+            - 'Данные контакта': 'api/contacts/get.md'
         - 'Прочее':
             - 'Идентификатор корреспондента и группы': 'api/chat-id.md'
             - 'Стандартные ошибки': 'api/common-errors.md'    
