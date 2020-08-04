@@ -132,6 +132,8 @@ POST https://api.green-api.com/v1/broadcast
 
 ## Ответ {#response}
 
+При успешном ответе возвращается код HTTP `201`
+
 Поле | Тип |  Описание
 ----- | ----- | -----
 `broadcast` | **array** | Массив идентификаторов созданных рассылок 
@@ -143,6 +145,10 @@ POST https://api.green-api.com/v1/broadcast
 `id ` | **string** | Идентификатор созданной рассылки 
 
 ### Пример тела ответа {#response-example-body}
+
+```
+201 Created
+```
 
 ```json
 {

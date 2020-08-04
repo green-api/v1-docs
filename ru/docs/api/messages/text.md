@@ -67,6 +67,8 @@ POST https://api.green-api.com/v1/messages
 ```
 ## Ответ {#response}
 
+При успешном ответе возвращается код HTTP `201`
+
 ### Поля ответа {#response-parameters}
 
 Поле | Тип |  Описание
@@ -81,6 +83,10 @@ POST https://api.green-api.com/v1/messages
 `id ` | **string** | Идентификатор отправленного сообщения 
 
 ### Пример тела ответа {#response-example-body}
+
+```
+201 Created
+```
 
 ```json
 {
