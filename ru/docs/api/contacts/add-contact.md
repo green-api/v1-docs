@@ -10,7 +10,7 @@
 
 Для добавления контакта требуется выполнить запрос по адресу:
 ```
-POST https://api.green-api.com/v2/{{account}}/AddContact
+POST https://api.green-api.com/v1/{{account}}/AddContact
 ```
 
 ### Параметры запроса {#request-parameters}

@@ -1,6 +1,6 @@
 site_name: Green API
-repo_name: green-api/docs-v2 
-repo_url: https://github.com/green-api/docs-v2
+repo_name: green-api/docs-v1 
+repo_url: https://github.com/green-api/docs-v1
 edit_uri: edit/master/ru/docs/
 site_dir: build
 site_url: https://green-api.com

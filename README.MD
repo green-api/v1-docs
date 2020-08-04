@@ -1,6 +1,6 @@
-# Документация GREEN API v2
+# Документация GREEN API v1
 
-Добро пожаловать в репозиторий [документации v2](https://green-api.com/docs-v2) GREEN API.
+Добро пожаловать в репозиторий [документации v1](https://green-api.com/docs-v1) GREEN API.
 
 ## Про документацию
 
