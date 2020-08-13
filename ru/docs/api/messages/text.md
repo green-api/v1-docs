@@ -14,7 +14,6 @@ POST https://api.green-api.com/v1/messages
 
 ```json
 {
-    "preview_url": false | true,
     "recipient_type": "individual" | "group",
     "to": "whatsapp-id" | "whatsapp-group-id",
     "type": "text",
@@ -28,13 +27,10 @@ POST https://api.green-api.com/v1/messages
 
 Параметр | Тип | Обязательный | Описание
 ----- | ----- | ----- | -----
-`preview_url`* | **boolean** | Нет | Если сообщение содержит URL, то данная опция активирует предпросмотр содержимого по URL. Подробнее в документации [Отправка URL в текстовых сообщениях](https://developers.facebook.com/docs/whatsapp/api/messages/text#urls)
-`recipient_type`* | **string** | Нет | Определяет тип получателя - корреспондент или группа. Возможные значения: `individual` - отправка корреспонденту; `group` - отправка в группу. Тип получателя определятся автоматически по значению поля `to`, поэтому указывать параметр не обязательно
+`recipient_type` | **string** | Нет | Определяет тип получателя - корреспондент или группа. Возможные значения: `individual` - отправка корреспонденту; `group` - отправка в группу. Значение по умолчанию: `individual`
 `to` | **string** | Да | [Идентификатор корреспондента или группы](../chat-id.md) - получатель сообщения
 `type` | **string** | Нет | Тип отправляемого сообщения. При отправке текстового сообщения указывать параметр не обязательно. Значение по умолчанию: `text`
 `text ` | **object** | Да | Объект текстового сообщения
-
-> \* Параметр можно не указыать, он используется для совместимости с официальной версией [WhatsApp Business API](https://developers.facebook.com/docs/whatsapp)
 
 Объект `text`
 
@@ -58,6 +54,7 @@ POST https://api.green-api.com/v1/messages
 Отправка сообщения в группу:
 ```json
 {
+    "recipient_type": "group",
     "to": "79001234567-1581234048",
     "type":"text",    
     "text": {
