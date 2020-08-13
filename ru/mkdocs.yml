@@ -21,7 +21,7 @@ nav:
             - 'Данные контакта': 'api/contacts/get.md'
         - 'Медиаданные':
             - 'Отправка медиаданных': 'api/media/upload.md'
-            - 'Получение медиаданных': 'api/media/retrieve.md'
+            - 'Получение медиаданных': 'api/media/download.md'
             - 'Удаление медиаданных': 'api/media/delete.md'
         - 'Прочее':
             - 'Идентификатор корреспондента и группы': 'api/chat-id.md'
