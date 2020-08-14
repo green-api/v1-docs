@@ -182,9 +182,9 @@ POST https://api.green-api.com/v1/messages
 {
     "errors": [
         {
-            "code": 82,
-            "details": "Outgoing messages limit exceeded",
-            "title": "Превышено колличество исходящих сообщений"
+            "code": 1,
+            "details": "The file URL is not available",
+            "title": "Файл по данному URL недоступен"
         }
     ],
     "meta": {
@@ -197,5 +197,17 @@ POST https://api.green-api.com/v1/messages
 ## Пример кода на Python  {#request-example-python}
 
 ```python
-###
+import requests
+
+url = "https://api.green-api.com/v1/messages"
+
+payload = "{\r\n    \"to\": \"79001234567\",\r\n    \"type\":  \"image\",\r\n    \"image\": {\r\n        \"id\": \"bca567ba-0bd7-4211-8792-0c123fbd2716\",\r\n        \"caption\": \"Green-API Logo\"\r\n    }\r\n}"
+headers = {
+  'Authorization': 'Bearer {{AuthToken}}',
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
 ```
