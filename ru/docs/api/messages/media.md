@@ -39,13 +39,11 @@ POST https://api.green-api.com/v1/messages
     },
     
     "video": {
-        "id": "your-media-id",
-        "caption": "your-video-caption"    
+        "id": "your-media-id"  
     },    
 
     "video": {
-        "link": "http(s)://the-url",
-        "caption": "your-video-caption"
+        "link": "http(s)://the-url"
     },
 
     "audio": {
@@ -95,7 +93,6 @@ POST https://api.green-api.com/v1/messages
 ----- | ----- | ----- | -----
 `id` | **string** | Да, если не указан `link` | Идентификатор файла видео из облачного хранилища `media`. Файл необходимо предварительно выгрузить методом [Отправка медиаданных](../media/upload.md)
 `link` | **string** | Да, если не указан `id` | Ссылка на файл видео. Ссылка должна быть доступна из Интернет. Допускается указывать ссылки только протоколов `HTTP` и `HTTPS`
-`caption` | **string** | Нет | Описание видео. Отображается в чате под видео
 
 Объект `audio`
 
