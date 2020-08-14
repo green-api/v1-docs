@@ -58,12 +58,10 @@ POST https://api.green-api.com/v1/messages
 
     "document": {
         "id": "your-media-id",
-        "filename": "your-document-filename"
     },
 
     "document": {
         "link": "http(s)://the-url",
-        "filename": "your-document-filename"
     }
     
 }
@@ -112,7 +110,6 @@ POST https://api.green-api.com/v1/messages
 ----- | ----- | ----- | -----
 `id` | **string** | Да, если не указан `link` | Идентификатор файла документа из облачного хранилища `media`. Файл необходимо предварительно выгрузить методом [Отправка медиаданных](../media/upload.md)
 `link` | **string** | Да, если не указан `id` | Ссылка на файл документа. Ссылка должна быть доступна из Интернет. Допускается указывать ссылки только протоколов `HTTP` и `HTTPS`
-`filename` | **string** | Нет | Имя файла с расширением
 
 ### Пример тела запроса {#request-example-body}
 
@@ -135,8 +132,7 @@ POST https://api.green-api.com/v1/messages
     "to": "79001234567-1581234048",
     "type":  "document",
     "document": {
-        "link": "https://storage.mysite.com/upload/b90b279f-65fc-4096-b5bd-2ece24a4a082",
-        "filename": "Green-API presentation.pdf"
+        "link": "https://storage.mysite.com/upload/green-api-presentation.pdf"
     }
 }
 ```
