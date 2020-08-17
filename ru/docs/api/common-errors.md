@@ -5,7 +5,7 @@
 1010 | `Error` | Возникла ошибка
 1011 | `Invalid parameter` | В метод передан некорректный параметр
 1020 | `Parameter -to- is missing` | Требуется указать получателя сообщения в параметре `to`
-1021 | `Invalid parameter -to-` | Параметр `to` не соответствует формату [идентификатора контакта или группы](chat-id.md)
+1021 | `Invalid parameter -to-` | Параметр `to` не соответствует формату [идентификатора корреспондента или группы](chat-id.md)
 1022 | `Subscriber not found` | Подписчик не найден
 1023 | `Subscriber is unsubscribed or not processed` | Подписчик отписан или не обработан
 1024 | `Failed to update subscriber details` | Не удалось обновить данные подписчика
