@@ -1,0 +1,149 @@
+{
+    "messages": [
+      {
+        "from": "79057229701",
+        "id": "ABGGeQVyKXAfAgo60-M2ccJStFIZ",
+        "image": {
+          "id": "670f3231-74e6-4cf8-9f2d-622440fb49c9",
+          "mime_type": "image/jpeg",
+          "sha256": "57ff77ac42b22c68fd69707d71f51ef9c873ba3816650302da60a1618d5749c9"
+        },
+        "timestamp": "1597316127",
+        "type": "image"
+      }
+    ],
+    "contacts": [
+      {
+        "profile": {
+          "name": "Андрей"
+        },
+        "wa_id": "79057229701"
+      }
+    ]
+}
+
+{
+    "messages": [
+      {
+        "document": {
+          "caption": "SLONBOOK KZ ENG 2019",
+          "filename": "SLONBOOK KZ ENG 2019.pdf",
+          "id": "253446ad-f4e5-464b-8226-923beea16f5e",
+          "mime_type": "application/pdf",
+          "sha256": "477dcad2ef27859ebddb900beeed6763b16e1ac1820ca477ea66afbe2bcb84ba"
+        },
+        "from": "79057229701",
+        "id": "ABGGeQVyKXAfAgo6Ci2dqB84g0pT",
+        "timestamp": "1597316365",
+        "type": "document"
+      }
+    ],
+    "contacts": [
+      {
+        "profile": {
+          "name": "Андрей"
+        },
+        "wa_id": "79057229701"
+      }
+    ]
+  }
+
+  {
+    "messages": [
+      {
+        "document": {
+          "caption": "myDSSStorage",
+          "filename": "myDSSStorage.sqlite-shm",
+          "id": "7d50f012-14a6-4be9-8ade-fd01afe0fa9e",
+          "mime_type": "application/octet-stream",
+          "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+        },
+        "from": "79057229701",
+        "id": "ABGGeQVyKXAfAgo6M57Co8bdJGk4",
+        "timestamp": "1597316479",
+        "type": "document"
+      }
+    ],
+    "contacts": [
+      {
+        "profile": {
+          "name": "Андрей"
+        },
+        "wa_id": "79057229701"
+      }
+    ]
+  }
+
+  // Текст
+{
+    "messages": [
+      {
+        "from": "79057229701",
+        "id": "ABGGeQVyKXAfAgo6BJYZrbH2wSuL",
+        "text": {
+          "body": "G"
+        },
+        "timestamp": "1597316093",
+        "type": "text"
+      }
+    ],
+    "contacts": [
+      {
+        "profile": {
+          "name": "Андрей"
+        },
+        "wa_id": "79057229701"
+      }
+    ]
+  }
+
+  {
+    "statuses": [
+      {
+        "errors": [
+          {
+            "code": 470,
+            "href": "https://developers.facebook.com/docs/whatsapp/api/errors/",
+            "title": "Message failed to send because more than 24 hours have passed since the customer last replied to this number"
+          }
+        ],
+        "id": "gBGGeQVyKXAfAgkPz0LBZ7bDqps",
+        "recipient_id": "79057229701",
+        "status": "failed",
+        "timestamp": "1597225209"
+      }
+    ]
+  }
+
+  {
+    "statuses": [
+      {
+        "id": "gBGGeQVyKXAfAgnXfZlcAmnhG0k",
+        "recipient_id": "79057229701",
+        "status": "sent",
+        "timestamp": "1597673342"
+      }
+    ]
+  }
+
+  {
+    "statuses": [
+      {
+        "id": "gBGGeQVyKXAfAgnXfZlcAmnhG0k",
+        "recipient_id": "79057229701",
+        "status": "read",
+        "timestamp": "1597673342"
+      }
+    ]
+  }
+
+  {
+    "statuses": [
+      {
+        "id": "gBGGeQVyKXAfAgnXfZlcAmnhG0k",
+        "recipient_id": "79057229701",
+        "status": "delivered",
+        "timestamp": "1597673342"
+      }
+    ]
+  }
