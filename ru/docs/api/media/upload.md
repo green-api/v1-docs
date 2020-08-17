@@ -16,7 +16,7 @@
 
 ```
 POST https://media.green-api.com/v1/media
-Content-Type: image/jpeg or other appropriate media type
+X-Gr-File-Extension: jpeg
 ```
 
 ```
@@ -24,8 +24,12 @@ binary-media-data
 ```
 
 В качестве полезных данных запроса следует указать бинарные данные выгружаемого файла.
-Также требуется задать заголовок `Content-Type`, в котором указать тип выгружаемых данных согласно стандарту [MIME](https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_MIME-%D1%82%D0%B8%D0%BF%D0%BE%D0%B2).
 
+### Заголовки запроса {#request-headers}
+
+Заголовок  | Обязательный | Описание
+----- | ----- | ----- | -----
+`X-Gr-File-Extension` | Да | Расширение выгружаемого файла, например `jpeg`
 
 ## Ответ {#response}
 
@@ -80,7 +84,7 @@ url = "https://media.green-api.com/v1/media"
 payload = "<file contents here>"
 headers = {
   'Authorization': 'Bearer {{AuthToken}}',
-  'Content-Type': 'image/jpeg'
+  'X-Gr-File-Extension': 'jpeg'
 }
 
 response = requests.request("POST", url, headers=headers, data = payload)

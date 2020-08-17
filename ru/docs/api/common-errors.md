@@ -22,4 +22,4 @@
 1061 | `Data not found` | Данные не найдены
 1062 | `Buying subscription is needed` | Необходимо приобрести или оплатить тариф
 1071 | `Senders not found` | Отправители не найдены
-1072 | `Senders are overflow` | Отправители переполнены
+7200 | `X-Gr-File-Extension header not found` | При выгрузке медиаданных требуется указать расширение выгружаемого файла в заголовке `X-Gr-File-Extension`. Подробнее в разделе [Отправка медиаданных](media/upload.md)

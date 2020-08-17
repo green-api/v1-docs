@@ -15,10 +15,10 @@ nav:
             - 'Сообщения с медиаданными': 'api/messages/media.md'
         - 'Рассылки':
             - 'Массовые рассылки': 'api/broadcast/text.md'
-        - 'Контакты':
-            - 'Добавить контакт': 'api/contacts/add.md'
-            - 'Список контактов': 'api/contacts/list.md'
-            - 'Данные контакта': 'api/contacts/get.md'
+        # - 'Контакты':
+        #     - 'Добавить контакт': 'api/contacts/add.md'
+        #     - 'Список контактов': 'api/contacts/list.md'
+        #     - 'Данные контакта': 'api/contacts/get.md'
         - 'Медиаданные':
             - 'Отправка медиаданных': 'api/media/upload.md'
             - 'Получение медиаданных': 'api/media/download.md'
