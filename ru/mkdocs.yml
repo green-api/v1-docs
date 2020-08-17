@@ -25,6 +25,7 @@ nav:
             - 'Удаление медиаданных': 'api/media/delete.md'
         - 'Прочее':
             - 'Идентификатор корреспондента и группы': 'api/chat-id.md'
+            - 'Форматирование в сообщениях': 'api/formatting.md'    
             - 'Стандартные ошибки': 'api/common-errors.md'    
 theme:
   name: material

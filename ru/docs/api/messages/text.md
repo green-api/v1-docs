@@ -3,7 +3,6 @@
 `/v1/messages`
 
 Для отправки текстовых сообщений корреспонденту или в группу используйте узел `messages`.
-При отправке сообщений корреспондент автоматически добавляется в контакты аккаунта.
 
 ## Запрос {#request}
 
@@ -36,7 +35,7 @@ POST https://api.green-api.com/v1/messages
 
 Параметр | Тип | Обязательный | Описание
 ----- | ----- | ----- | -----
-`body ` | **string** | Да | Текст сообщения. Может содержать несколько [URL](https://developers.facebook.com/docs/whatsapp/api/messages/text?locale=ru_RU#urls) и [форматирование](https://developers.facebook.com/docs/whatsapp/api/messages/text?locale=ru_RU#formatting). Максимальная длина текстового сообщения составляет 4096 символов. Поддерживаются символы emoji 😃
+`body ` | **string** | Да | Текст сообщения. Может содержать несколько URL и [форматирование](../formatting.md). Максимальная длина текстового сообщения составляет 4096 символов. Поддерживаются символы emoji 😃
 
 ### Пример тела запроса {#request-example-body}
 
@@ -126,5 +125,17 @@ POST https://api.green-api.com/v1/messages
 ## Пример кода на Python  {#request-example-python}
 
 ```python
-###
+import requests
+
+url = "https://api.green-api.com/v1/messages"
+
+payload = "{\r\n    \"to\": \"79001234567\",\r\n    \"type\":\"text\",    \r\n    \"text\": {\r\n        \"body\": \"I use Green-API to send this message to you!\"\r\n    }    \r\n}"
+headers = {
+  'Authorization': 'Bearer {{AuthToken}}',
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
 ```
