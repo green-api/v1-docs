@@ -1,6 +1,6 @@
 # Получение медиаданных
 
-`/v1/media`
+`/v1/{{account}}/media`
 
 Для получения изображений, видео, аудио и документов из входящих сообщений требуется выполнить запрос на узел `media`.
 
@@ -13,7 +13,7 @@
 > Обратите внимание, что в качестве хоста используется адрес `media.green-api.com`
 
 ```
-GET https://media.green-api.com/v1/media/media-id
+GET https://media.green-api.com/v1/{{account}}/media/media-id
 ```
 
 ### Параметры запроса {#request-parameters}
@@ -53,7 +53,7 @@ binary-media-data
 ```python
 import requests
 
-url = "https://media.green-api.com/v1/media/f32bb4f9-850b-43c6-9b91-279831914c95"
+url = "https://media.green-api.com/v1/{{account}}/media/f32bb4f9-850b-43c6-9b91-279831914c95"
 
 payload = {}
 headers = {
