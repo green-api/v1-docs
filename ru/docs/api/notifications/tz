@@ -1,0 +1,57 @@
+https://sendapi.net/wp-content/uploads/0v2/4593_aNDU5MyomXj/79057229701_bNzkwNTcyMj/202008_cMjAyMDA4Ki/c31698cdc0_IMG-20200817-WA0000.jpg
+
+Требуется поддержать получение вебхуков из sendApi (текст)
+
+Дорабатываем существующий модуль webhook-http-api-producer
+Получаем вебхуки на адрес https://webhook.green-api.com/v1/
+Маппируем тело вебхука и кладем в очередь раббита
+Имя очереди задаем по шаблону: "v1-webhook-wa-{{account}}"
+Авторизация. Если номер аккаунта начинается с цифры "4" или "5", то авторизацию не выполняем. В будущем сделаем авторизацию.
+
+Маппирование:
+1. Текстовые сообщения:
+Формат СендАПИ (текст)
+{
+    "phone": "79057229701",
+    "phone_number": "77058376772",
+    "callback_status": "new_inbox_message",
+    "transport": "whatsapp",
+    "phone_id": 1130,
+    "user_id": 4593,                                  -> account
+    "add_date": "2020-08-17T14:19:24.076Z",
+    "reverse_date": "2020-08-17T14:19:24.076Z",
+    "message_id": 178,
+    "message_data": [
+      {
+        "message_id": 178,
+        "message_route": "inbox",
+        "message_type": "message-chat",
+        "message_text": "Тест",
+        "message_quoted": null,
+        "phone": "79057229701",
+        "file_url": null,
+        "add_date": "2020-08-17 20:19:22"
+      }
+    ]
+}
+
+Формат v1 (текст)
+
+{
+    "messages": [
+      {
+        "from": "79057229701",                   -> message_data.phone
+        "id": "ABGGeQVyKXAfAgo6BJYZrbH2wSuL",    -> message_data.message_id
+        "text": {
+          "body": "G"                            -> message_data.message_text
+        },
+        "timestamp": "1597316093",               -> message_data.add_date
+        "type": "text"                           -> message_data.message_type = "message-chat"
+      }
+    ],
+    "contacts": [
+      {
+        "wa_id": "79057229701" -> phone
+      }
+    ]
+}
