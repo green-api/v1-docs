@@ -1,6 +1,24 @@
 
 // всего поддерживаемых форматов принимаемых файлов: 
-['message-image','message-ppt','file-ppt','file-pptx', 'file-xls','file-xlsx','file-doc','file-docx','file-pdf','file-video','message-undefined','file-zip','file-xml','file-text']
+
+'file-text'
+'message-image',
+'file-video',
+  
+'message-ppt',
+'file-ppt',
+'file-pptx', 
+'file-xls',
+'file-xlsx',
+'file-doc',
+'file-docx',
+'file-pdf',
+'message-undefined',
+'file-zip',
+'file-xml',
+
+
+]
 
 // Текст
 {
