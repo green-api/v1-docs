@@ -147,3 +147,56 @@
       }
     ]
   }
+
+  // Контакт
+  {
+  "messages": [
+    {
+      "contacts": [
+        {
+          "addresses": [],
+          "emails": [
+            {
+              "email": "andrew.shamin@gmail.com",
+              "type": "эл. почта"
+            }
+          ],
+          "ims": [],
+          "name": {
+            "first_name": "Андрей",
+            "formatted_name": "Андрей Шамин",
+            "last_name": "Шамин"
+          },
+          "org": {
+            "department": "SLONBOOK"
+          },
+          "phones": [
+            {
+              "phone": "+7 905 722-97-01",
+              "type": "HOME",
+              "wa_id": "79057229701"
+            }
+          ],
+          "urls": [
+            {
+              "type": "_$!<HomePage>!$_",
+              "url": "https://slonbook.com"
+            }
+          ]
+        }
+      ],
+      "from": "79057229701",
+      "id": "ABGGeQVyKXAfAgo6sfaJrA2oJmv3",
+      "timestamp": "1597922648",
+      "type": "contacts"
+    }
+  ],
+  "contacts": [
+    {
+      "profile": {
+        "name": "Андрей"
+      },
+      "wa_id": "79057229701"
+    }
+  ]
+}

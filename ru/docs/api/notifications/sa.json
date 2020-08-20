@@ -1,24 +1,12 @@
 
-// всего поддерживаемых форматов принимаемых файлов: 
-
-'file-text'
-'message-image',
-'file-video',
-  
-'message-ppt',
-'file-ppt',
-'file-pptx', 
-'file-xls',
-'file-xlsx',
-'file-doc',
-'file-docx',
-'file-pdf',
-'message-undefined',
-'file-zip',
-'file-xml',
-
-
-]
+Правила конвертации значений в зависимости от значения поля message_type:
++ message-chat -> text
++ message-image -> image
++ file-video -> video
+message-vcard -> contact
+message-location -> location
+message-ppt -> voice
++ Все остальные значения маппируеются в document -> message-undefined, file-ppt, file-ppt, file-xls, file-xlsx, file-doc, file-docx, file-pdf, file-zip, file-xml и др.
 
 // Текст
 {
