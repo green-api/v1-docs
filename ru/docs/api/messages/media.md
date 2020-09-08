@@ -1,6 +1,6 @@
 # Отправка сообщений с медиаданными
 
-`/v1/{{account}}/messages`
+`/v1/messages`
 
 Для отправки изображений, видео, аудио и документов корреспонденту или в группу используйте узел `messages`.
 
@@ -20,7 +20,7 @@
 
 Для отправки изображения, видео, аудио или документа требуется выполнить запрос по адресу:
 ```
-POST https://api.green-api.com/v1/{{account}}/messages
+POST https://api.green-api.com/v1/messages
 ```
 
 ```json
@@ -200,7 +200,7 @@ POST https://api.green-api.com/v1/{{account}}/messages
 ```python
 import requests
 
-url = "https://api.green-api.com/v1/{{account}}/messages"
+url = "https://api.green-api.com/v1/messages"
 
 payload = "{\r\n    \"to\": \"79001234567\",\r\n    \"type\":  \"image\",\r\n    \"image\": {\r\n        \"id\": \"bca567ba-0bd7-4211-8792-0c123fbd2716\",\r\n        \"caption\": \"Green-API Logo\"\r\n    }\r\n}"
 headers = {

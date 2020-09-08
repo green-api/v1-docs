@@ -1,6 +1,6 @@
 # Отправка текстовых сообщений
 
-`/v1/{{account}}/messages`
+`/v1/messages`
 
 Для отправки текстовых сообщений корреспонденту или в группу используйте узел `messages`.
 
@@ -8,7 +8,7 @@
 
 Для отправки текстового сообщения требуется выполнить запрос по адресу:
 ```
-POST https://api.green-api.com/v1/{{account}}/messages
+POST https://api.green-api.com/v1/messages
 ```
 
 ```json
@@ -127,7 +127,7 @@ POST https://api.green-api.com/v1/{{account}}/messages
 ```python
 import requests
 
-url = "https://api.green-api.com/v1/{{account}}/messages"
+url = "https://api.green-api.com/v1/messages"
 
 payload = "{\r\n    \"to\": \"79001234567\",\r\n    \"type\":\"text\",    \r\n    \"text\": {\r\n        \"body\": \"I use Green-API to send this message to you!\"\r\n    }    \r\n}"
 headers = {

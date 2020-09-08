@@ -1,6 +1,6 @@
 # Отправка массовых рассылок
 
-`/v1/{{account}}/broadcast`
+`/v1/broadcast`
 
 Для отправки массовых рассылок своим контактам используйте узел `broadcast`. Поддерживается отправка текстовых рассылок, а также рассылок с изображениями, видео, аудио и документами. Количество получателей рассылки не ограничено.
 
@@ -37,7 +37,7 @@
 
 Для отправки рассылки требуется выполнить запрос по адресу:
 ```
-POST https://api.green-api.com/v1/{{account}}/broadcast
+POST https://api.green-api.com/v1/broadcast
 ```
 
 ```json
@@ -264,7 +264,7 @@ POST https://api.green-api.com/v1/{{account}}/broadcast
 ```python
 import requests
 
-url = "https://api.green-api.com/v1/{{account}}/broadcast"
+url = "https://api.green-api.com/v1/broadcast"
 
 payload = "{\r\n    \"name\": \"Broadcast from Green-API\",\r\n    \"to\": [\r\n        {\"wa_id\": \"79001234560\"},\r\n        {\"wa_id\": \"79001234561\"},\r\n        {\"wa_id\": \"79001234562\"}\r\n    ],    \r\n    \"type\": \"text\",\r\n    \"text\": {\r\n        \"body\": \"I use Green-API to send this broadcast to you!\"\r\n    }\r\n}"
 headers = {

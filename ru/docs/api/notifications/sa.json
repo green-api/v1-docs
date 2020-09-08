@@ -3,9 +3,9 @@
 + message-chat -> text
 + message-image -> image
 + file-video -> video
-message-vcard -> contact
-message-location -> location
-message-ppt -> voice
++ message-vcard -> contact
++ message-location -> location
++ message-ppt -> voice
 + Все остальные значения маппируеются в document -> message-undefined, file-ppt, file-ppt, file-xls, file-xlsx, file-doc, file-docx, file-pdf, file-zip, file-xml и др.
 
 // Текст

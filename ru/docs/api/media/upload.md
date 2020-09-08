@@ -1,6 +1,6 @@
 # Отправка медиаданных
 
-`/v1/{{account}}/media`
+`/v1/media`
 
 Для отправки изображений, видео, аудио и документов требуется предварительно выгрузить их на узел `media`. После выгрузки будет доступен идентификатор медиаданных, который следует использовать при [отправке сообщений с медиаданными](../messages/media.md).
 
@@ -15,7 +15,7 @@
 > Обратите внимание, что в качестве хоста используется адрес `media.green-api.com`
 
 ```
-POST https://media.green-api.com/v1/{{account}}/media
+POST https://media.green-api.com/v1/media
 X-Gr-File-Extension: jpeg
 ```
 
@@ -79,7 +79,7 @@ binary-media-data
 ```python
 import requests
 
-url = "https://media.green-api.com/v1/{{account}}/media"
+url = "https://media.green-api.com/v1/media"
 
 payload = "<file contents here>"
 headers = {

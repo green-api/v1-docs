@@ -1,6 +1,6 @@
 # Удаление медиаданных
 
-`/v1/{{account}}/media`
+`/v1/media`
 
 Для удаления файла медиаданных требуется выполнить `DELETE` запрос на узел `media`. В запросе требуется указать идентификатор файла, который требуется удалить. Идентификатор файла может быть получен из входящих сообщений или при [отправке медиаданных](upload.md).
 
@@ -13,7 +13,7 @@
 > Обратите внимание, что в качестве хоста используется адрес `media.green-api.com`
 
 ```
-DELETE https://media.green-api.com/v1/{{account}}/media/media-id
+DELETE https://media.green-api.com/v1/media/media-id
 ```
 
 ### Параметры запроса {#request-parameters}
@@ -50,7 +50,7 @@ DELETE https://media.green-api.com/v1/{{account}}/media/media-id
 ```python
 import requests
 
-url = "https://media.green-api.com/v1/{{account}}/media/f32bb4f9-850b-43c6-9b91-279831914c95"
+url = "https://media.green-api.com/v1/media/f32bb4f9-850b-43c6-9b91-279831914c95"
 
 payload = {}
 headers = {
