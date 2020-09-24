@@ -1,42 +1,48 @@
 site_name: Green API
-repo_name: green-api/docs-v1 
+repo_name: green-api/docs-v1
 repo_url: https://github.com/green-api/docs-v1
 edit_uri: edit/master/ru/docs/
 site_dir: build
 site_url: https://green-api.com
 
 nav:
-    - 'На главную': '/'
-    - 'Оглавление': 'index.md'
-    - 'Документация API':
-        - 'Обзор': 'api/index.md'
-        - 'Сообщения':
-            - 'Текстовые сообщения': 'api/messages/text.md'
-            - 'Сообщения с медиаданными': 'api/messages/media.md'
-        - 'Рассылки':
-            - 'Массовые рассылки': 'api/broadcast/text.md'
+  - "Главная":
+    - Главная: "/"
+  - "Блог":
+    - Блог: "blog/index.html"
+  - "Документация":
+    - "Оглавление": "index.md"
+    - "Документация API":
+        - "Обзор": "api/index.md"
+        - "Сообщения":
+            - "Текстовые сообщения": "api/messages/text.md"
+            - "Сообщения с медиаданными": "api/messages/media.md"
+        - "Рассылки":
+            - "Массовые рассылки": "api/broadcast/text.md"
         # - 'Контакты':
         #     - 'Добавить контакт': 'api/contacts/add.md'
         #     - 'Список контактов': 'api/contacts/list.md'
         #     - 'Данные контакта': 'api/contacts/get.md'
-        - 'Медиаданные':
-            - 'Отправка медиаданных': 'api/media/upload.md'
-            - 'Получение медиаданных': 'api/media/download.md'
-            - 'Удаление медиаданных': 'api/media/delete.md'
-        - 'Прочее':
-            - 'Идентификатор корреспондента и группы': 'api/chat-id.md'
-            - 'Форматирование в сообщениях': 'api/formatting.md'    
-            - 'Стандартные ошибки': 'api/errors.md'    
+        - "Медиаданные":
+            - "Отправка медиаданных": "api/media/upload.md"
+            - "Получение медиаданных": "api/media/download.md"
+            - "Удаление медиаданных": "api/media/delete.md"
+        - "Прочее":
+            - "Идентификатор корреспондента и группы": "api/chat-id.md"
+            - "Форматирование в сообщениях": "api/formatting.md"
+            - "Стандартные ошибки": "api/errors.md"
 theme:
   name: material
-  custom_dir: overrides
-
-   # Don't include MkDocs' JavaScript
+  custom_dir:
+    overrides
+    # Don't include MkDocs' JavaScript
   include_search_page: false
   search_index_only: true
 
   # Default values, taken from mkdocs_theme.yml
   language: ru
+  features:
+    - tabs
   palette:
     scheme: default
     primary: green
@@ -49,7 +55,7 @@ theme:
 extra_css:
   - stylesheets/styles.css
   - stylesheets/extra.css
-  
+
 # Plugins
 plugins:
   - search:
@@ -69,7 +75,7 @@ markdown_extensions:
   - markdown.extensions.footnotes
   - markdown.extensions.meta
   - markdown.extensions.toc:
-      permalink:  "#"
+      permalink: "#"
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
