@@ -19,10 +19,11 @@ nav:
             - "Сообщения с медиаданными": "api/messages/media.md"
         - "Рассылки":
             - "Массовые рассылки": "api/broadcast/text.md"
-        # - 'Контакты':
-        #     - 'Добавить контакт': 'api/contacts/add.md'
-        #     - 'Список контактов': 'api/contacts/list.md'
-        #     - 'Данные контакта': 'api/contacts/get.md'
+        - "Уведомления":
+            - "Получение уведомлений": "api/notifications/get.md"
+            - "Удаление уведомлений": "api/notifications/delete.md"
+        - "Формат уведомлений":
+            - "Входящее текстовое сообщение": "api/notifications-format/inbound-message-text.md"
         - "Медиаданные":
             - "Отправка медиаданных": "api/media/upload.md"
             - "Получение медиаданных": "api/media/download.md"
