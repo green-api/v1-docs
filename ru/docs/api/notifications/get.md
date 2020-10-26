@@ -3,9 +3,9 @@
 `/v1/notifications`
 
 Для получения входящих уведомлений используйте узел `notifications`. 
-Уведомления содержат данные о входящих сообщениях, статусах ранее отправленных сообщений и др. После получения и обработки уведомления его трубется [удалить](), чтобы получить следующее уведомление.
+Уведомления содержат данные о входящих сообщениях, статусах ранее отправленных сообщений и др. После получения и обработки уведомления его трубется [удалить](delete.md), чтобы получить следующее уведомление.
 
-> Вызов ожидает получения уведомления в течение 20 сек. Вызов метода завершается с пустым ответом в случае достижения таймаута. Если в течение 20 сек в очереди появляется уведомление, то вызов метода завешается, и метод возвращает полученное уведомление. 
+> Для получения входящих уведомлений используется технология [Long polling](https://en.wikipedia.org/wiki/Push_technology#Long_polling). Вызов ожидает получения уведомления в течение 20 сек. Вызов метода завершается с пустым ответом в случае достижения таймаута. Если в течение 20 сек в очереди появляется уведомление, то вызов метода завешается, и метод возвращает одно полученное уведомление. 
 
 > Срок хранения уведомлений в очереди составляет 24 часа.
 
@@ -22,18 +22,7 @@ GET https://api.green-api.com/v1/notifications
 
 При успешном ответе возвращается код HTTP `200`
 
-### Поля ответа {#response-parameters}
-
-Поле | Тип |  Описание
------ | ----- | -----
-`messages` | **array** | Массив идентификаторов отправленных сообщений 
-
-
-Массив `messages`
-
-Поле | Тип |  Описание
------ | ----- | -----
-`id ` | **string** | Идентификатор отправленного сообщения 
+Ответ содержит одно входящее уведомление в [заданном формате](../notifications-format/index.md).
 
 ### Пример тела ответа {#response-example-body}
 
@@ -43,15 +32,35 @@ GET https://api.green-api.com/v1/notifications
 
 ```json
 {
-    "messages": [
+    "receipt": 1234567,
+    "notifications": [
         {
-            "id": "1234"
+            "type": "inbound_message",
+            "account": {
+                "id": 22123456,
+                "wa_id": "79001234567"
+            },
+            "messages": [
+                {
+                    "from": "79001234568",
+                    "id": 1234,
+                    "timestamp": 1603666324,
+                    "text": {
+                        "body": "I use Green-API to get this message from you!"
+                    },
+                    "type": "text"
+                }
+            ],
+            "contacts": [
+                {
+                    "profile": {
+                        "name": "Andrew"
+                    },
+                    "wa_id": "79001234568"
+                }
+            ]
         }
-    ],
-    "meta": {
-        "api_status": "stable",
-        "version": "2.0.1"
-    }
+    ]
 }
 ```
 
@@ -61,38 +70,19 @@ GET https://api.green-api.com/v1/notifications
 
 В случае ошибки возвращается код HTTP `400` с подробным описанием ошибки в теле ответа.
 
-### Пример тела ответа с ошибкой {#response-example-body-error}
-
-```json
-{
-    "errors": [
-        {
-            "code": 82,
-            "details": "Outgoing messages limit exceeded",
-            "title": "Превышено колличество исходящих сообщений"
-        }
-    ],
-    "meta": {
-        "api_status": "stable",
-        "version": "2.0.1"
-    }
-}
-```
-
 ## Пример кода на Python  {#request-example-python}
 
 ```python
 import requests
 
-url = "https://api.green-api.com/v1/messages"
+url = "https://api.green-api.com/v1/notifications"
 
-payload = "{\r\n    \"to\": \"79001234567\",\r\n    \"type\":\"text\",    \r\n    \"text\": {\r\n        \"body\": \"I use Green-API to send this message to you!\"\r\n    }    \r\n}"
+payload = {}
 headers = {
-  'Authorization': 'Bearer {{AuthToken}}',
-  'Content-Type': 'application/json'
+  'Authorization': 'Bearer {{AuthToken}}'
 }
 
-response = requests.request("POST", url, headers=headers, data = payload)
+response = requests.request("GET", url, headers=headers, data = payload)
 
 print(response.text.encode('utf8'))
 ```
