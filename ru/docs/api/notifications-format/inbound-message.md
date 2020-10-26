@@ -109,7 +109,45 @@
 `file_extension` | **string** | Расширение полученного файла, например `jpeg`
 `caption` | **string** | Описание полученного изображения. Отображается в чате под изображением
 
+#### Объект `video` {#notification-object-messages-video}
 
+Параметр | Тип | Описание
+----- | ----- | -----
+`id` | **string** | Идентификатор видео-файла из облачного хранилища `media`. Для загрузки файла используйте метод [Получение медиаданных](../media/download.md)
+`mime_type` | **string** | [MIME](https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_MIME-%D1%82%D0%B8%D0%BF%D0%BE%D0%B2) тип файла
+`file_extension` | **string** | Расширение полученного файла, например `mp4`
+`caption` | **string** | Описание полученного видео. Отображается в чате под видео
+
+#### Объект `voice` {#notification-object-messages-voice}
+
+Параметр | Тип | Описание
+----- | ----- | -----
+`id` | **string** | Идентификатор файла голосового сообщения из облачного хранилища `media`. Для загрузки файла используйте метод [Получение медиаданных](../media/download.md)
+`mime_type` | **string** | [MIME](https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_MIME-%D1%82%D0%B8%D0%BF%D0%BE%D0%B2) тип файла
+`file_extension` | **string** | Расширение полученного файла, например `ppt`
+
+#### Объект `document` {#notification-object-messages-document}
+
+Параметр | Тип | Описание
+----- | ----- | -----
+`id` | **string** | Идентификатор файла документа из облачного хранилища `media`. Для загрузки файла используйте метод [Получение медиаданных](../media/download.md)
+`mime_type` | **string** | [MIME](https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_MIME-%D1%82%D0%B8%D0%BF%D0%BE%D0%B2) тип файла
+`file_extension` | **string** | Расширение полученного файла, например `pdf`
+`filename` | **string** | Полное имя файла документа, указанное при отправке
+
+
+#### Объект `contacts` {#notification-object-messages-contacts}
+
+Параметр | Тип | Описание
+----- | ----- | -----
+`vcard ` | **string** | Данные карточки контакта. Например: "\nN:;GreenAPI\nFN:GreenAPI\nTEL;WAID=79001234567:+7 900 123 4567\nTEL;WAID=79001234567:+7 900 123 4567\nX-AB-LABEL:\nX-AB-LABEL:\n"
+
+
+#### Объект `location` {#notification-object-messages-location}
+
+Параметр | Тип | Описание
+----- | ----- | -----
+`link ` | **string** | Ссылка на геообъект на картах maps.google.com. Например: https://maps.google.com/maps?q=55.7416,37.6201&z=17&hl=ru
 
 
 ## Примеры {#notifications-example}
