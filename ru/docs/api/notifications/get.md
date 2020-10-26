@@ -58,7 +58,7 @@ GET https://api.green-api.com/v1/notifications
             "messages": [
                 {
                     "from": "79001234568",
-                    "id": 1234,
+                    "id": "1234",
                     "timestamp": 1603666324,
                     "text": {
                         "body": "I use Green-API to get this message from you!"

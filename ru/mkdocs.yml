@@ -23,8 +23,7 @@ nav:
             - "Получение уведомлений": "api/notifications/get.md"
             - "Удаление уведомлений": "api/notifications/delete.md"
         - "Формат уведомлений":
-            - "Формат уведомлений": "api/notifications-format/index.md"
-            - "Входящее текстовое сообщение": "api/notifications-format/inbound-message-text.md"
+            - "Формат входящего сообщения": "api/notifications-format/inbound-message.md"
         - "Медиаданные":
             - "Отправка медиаданных": "api/media/upload.md"
             - "Получение медиаданных": "api/media/download.md"

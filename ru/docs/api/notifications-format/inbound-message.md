@@ -77,11 +77,33 @@
 Параметр | Тип | Описание
 ----- | ----- | -----
 `type` | **string** | Тип уведомления. Для входящих сообщений поле принимает значение `inbound_message`
-`account` | **object** | [Объект аккаунта](). Содержит данные аккаунта, который получил уведомление
-`messages` | **object** | [Объект сообщения](). Содержит данные полученного сообщения
-`contacts` | **object** | [Объект контакта](). Содержит данные отправителя сообщения
+`account` | **object** | [Объект аккаунта](notification-object-account). Содержит данные аккаунта, который получил уведомление
+`messages` | **object** | [Объект сообщения](notification-object-messages). Содержит данные полученного сообщения
+`contacts` | **object** | [Объект контакта](notification-object-contacts). Содержит данные отправителя сообщения
+
+### Объект `account` {#notification-object-account}
+
+Объект содержит данные аккаунта в системе Green-API
+
+Параметр | Тип | Описание
+----- | ----- | -----
+`id` | **integer** | Номер аккаунта 
+`wa_id` | **string** | Номер телефона аккаунта; получатель входящего уведомления
+
+
+### Объект `contacts` {#notification-object-contacts}
+
+Объект содержит данные контакта отправителя сообщения
+
+Параметр | Тип | Описание
+----- | ----- | -----
+`profile` | **object** | Профиль контакта. Содержит имя контакта в поле `name` 
+`wa_id` | **string** | Номер телефона контакта
+
 
 ### Объект `messages` {#notification-object-messages}
+
+Объект содержит данные входящего сообщения. В зависимости от параметра `type` сообщение может содержать различные данные: текст, изображение, видео, голосовое сообщение, документ, контакт, геопозицию. 
 
 Параметр | Тип | Описание
 ----- | ----- | -----
@@ -91,7 +113,11 @@
 `type` | **string** | Тип полученного сообщения. Возможные значения: `text`, `image`, `video`, `voice`, `document`, `contacts`, `location`
 `text` | **object** | [Объект текстового сообщения](#notification-object-messages-text)
 `image` | **object** | [Объект с данными изображения](#notification-object-messages-image)
-
+`video` | **object** | [Объект с данными видео](#notification-object-messages-video)
+`voice` | **object** | [Объект с данными голосового сообщения](#notification-object-messages-voice)
+`document` | **object** | [Объект с данными документа](#notification-object-messages-document)
+`contacts` | **object** | [Объект с данными контакта](#notification-object-messages-contacts)
+`location` | **object** | [Объект с данными геопозиции](#notification-object-messages-location)
 
 #### Объект `text` {#notification-object-messages-text}
 
@@ -140,7 +166,7 @@
 
 Параметр | Тип | Описание
 ----- | ----- | -----
-`vcard ` | **string** | Данные карточки контакта. Например: "\nN:;GreenAPI\nFN:GreenAPI\nTEL;WAID=79001234567:+7 900 123 4567\nTEL;WAID=79001234567:+7 900 123 4567\nX-AB-LABEL:\nX-AB-LABEL:\n"
+`vcard ` | **string** | Данные карточки контакта. Например: "\nN:;Green-API\nFN:Green-API\nTEL;WAID=79001234567:+7 900 123 4567\nTEL;WAID=79001234567:+7 900 123 4567\nX-AB-LABEL:\nX-AB-LABEL:\n"
 
 
 #### Объект `location` {#notification-object-messages-location}
@@ -164,12 +190,80 @@
     "messages": [
         {
             "from": "79001234568",
-            "id": 1234,
+            "id": "1234",
             "timestamp": 1603666324,
             "text": {
                 "body": "I use Green-API to get this message from you!"
             },
             "type": "text"
+        }
+    ],
+    "contacts": [
+        {
+            "profile": {
+                "name": "Andrew"
+            },
+            "wa_id": "79001234568"
+        }
+    ]
+}
+```
+
+### Получено сообщение с изображением {#notification-example-image}
+
+```json
+{
+    "type": "inbound_message",
+    "account": {
+        "id": 22123456,
+        "wa_id": "79001234567"
+    },
+    "messages": [
+        {
+            "from": "79001234568",
+            "id": "1234",
+            "timestamp": 1603666324,
+            "image": {
+                "id": "bca567ba-0bd7-4211-8792-0c123fbd2716",
+                "mime_type": "image/jpeg",
+                "file_extension": "jpeg",
+                "caption": "Green-API Logo"
+            },
+            "type": "image"
+        }
+    ],
+    "contacts": [
+        {
+            "profile": {
+                "name": "Andrew"
+            },
+            "wa_id": "79001234568"
+        }
+    ]
+}
+```
+
+### Получено сообщение с документом {#notification-example-document}
+
+```json
+{
+    "type": "inbound_message",
+    "account": {
+        "id": 22123456,
+        "wa_id": "79001234567"
+    },
+    "messages": [
+        {
+            "from": "79001234568",
+            "id": "1234",
+            "timestamp": 1603666324,
+            "document": {
+                "id": "bca567ba-0bd7-4211-8792-0c123fbd2716",
+                "mime_type": "application/pdf",
+                "file_extension": "pdf",
+                "filename": "green-api-presentation.pdf"
+            },
+            "type": "document"
         }
     ],
     "contacts": [
