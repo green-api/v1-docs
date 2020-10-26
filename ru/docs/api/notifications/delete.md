@@ -3,55 +3,52 @@
 `/v1/notifications`
 
 Для удаления входящих уведомлений используйте узел `notifications`.
-После получения и обработки уведомления его требуется удалить, чтобы [получить следующее уведомление]() из очереди.
+После получения и обработки уведомления его требуется удалить, чтобы [получить](get.md) следующее уведомление из очереди.
 
 ## Запрос {#request}
 
 Для удаления уведомления требуется выполнить запрос по адресу:
 ```
-DELETE https://api.green-api.com/v1/notifications/receipt
+DELETE https://api.green-api.com/v1/notifications/{{receipt}}
 ```
 
 ### Параметры запроса {#request-parameters}
 
 Параметр | Тип | Обязательный | Описание
 ----- | ----- | ----- | -----
-`receipt` | **integer** | Да | Идентификатор доставки для удаления уведомления; формируется при [получении уведомления](get.md) 
+`receipt` | **integer** | Да | Идентификатор доставки уведомления; формируется при [получении уведомления](get.md) 
 
 ## Ответ {#response}
 
-При успешном ответе возвращается код HTTP `200`
+При успешном ответе возвращается код HTTP `200` независимо от того, было уведомление удалено или нет.
 
 ### Поля ответа {#response-parameters}
 
 Поле | Тип |  Описание
 ----- | ----- | -----
-`messages` | **array** | Массив идентификаторов отправленных сообщений 
-
-
-Массив `messages`
-
-Поле | Тип |  Описание
------ | ----- | -----
-`id ` | **string** | Идентификатор отправленного сообщения 
+`result` | **boolean** | Результат удаления уведомления: `true` - уведомление найдено и удалено; `false` - уведомление не было найдено по заданному значению `receipt`
 
 ### Пример тела ответа {#response-example-body}
+
+Если уведомление было найдено и удалено, то возвращается код HTTP `200`. Тело ответа при этом содержит параметр `result` в значении `true`:
 
 ```
 200
 ```
-
 ```json
 {
-    "messages": [
-        {
-            "id": "1234"
-        }
-    ],
-    "meta": {
-        "api_status": "stable",
-        "version": "2.0.1"
-    }
+    "result": true
+}
+```
+
+Если уведомление не было найдено, то также возвращается код HTTP `200`. Тело ответа при этом содержит параметр `result` в значении `false`:
+
+```
+200
+```
+```json
+{
+    "result": false
 }
 ```
 
@@ -61,38 +58,19 @@ DELETE https://api.green-api.com/v1/notifications/receipt
 
 В случае ошибки возвращается код HTTP `400` с подробным описанием ошибки в теле ответа.
 
-### Пример тела ответа с ошибкой {#response-example-body-error}
-
-```json
-{
-    "errors": [
-        {
-            "code": 82,
-            "details": "Outgoing messages limit exceeded",
-            "title": "Превышено колличество исходящих сообщений"
-        }
-    ],
-    "meta": {
-        "api_status": "stable",
-        "version": "2.0.1"
-    }
-}
-```
-
 ## Пример кода на Python  {#request-example-python}
 
 ```python
 import requests
 
-url = "https://api.green-api.com/v1/messages"
+url = "https://api.green-api.com/v1/notifications/1234567"
 
-payload = "{\r\n    \"to\": \"79001234567\",\r\n    \"type\":\"text\",    \r\n    \"text\": {\r\n        \"body\": \"I use Green-API to send this message to you!\"\r\n    }    \r\n}"
+payload = {}
 headers = {
-  'Authorization': 'Bearer {{AuthToken}}',
-  'Content-Type': 'application/json'
+  'Authorization': 'Bearer {{AuthToken}}'
 }
 
-response = requests.request("POST", url, headers=headers, data = payload)
+response = requests.request("DELETE", url, headers=headers, data = payload)
 
 print(response.text.encode('utf8'))
 ```
