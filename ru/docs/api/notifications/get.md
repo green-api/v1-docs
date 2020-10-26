@@ -18,11 +18,26 @@
 GET https://api.green-api.com/v1/notifications
 ```
 
+
 ## Ответ {#response}
 
 При успешном ответе возвращается код HTTP `200`
 
-Ответ содержит одно входящее уведомление в [заданном формате](../notifications-format/index.md).
+```json
+{
+    "receipt": "notification-receipt-id",
+    "notifications": [
+        "notification-body"
+    ]
+}
+```
+
+### Поля ответа {#response-parameters}
+
+Поле | Тип |  Описание
+----- | ----- | -----
+`receipt` | **integer** | Идентификатор доставки уведомления; используется для [удаления уведомления](delete.md) после его обработки
+`notifications` | **array** | Входящее уведомление согласно [Формату уведомлений](../notifications-format/index.md)
 
 ### Пример тела ответа {#response-example-body}
 
