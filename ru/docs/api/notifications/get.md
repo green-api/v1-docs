@@ -37,7 +37,7 @@ GET https://api.green-api.com/v1/notifications
 Поле | Тип |  Описание
 ----- | ----- | -----
 `receipt` | **integer** | Идентификатор доставки уведомления; используется для [удаления уведомления](delete.md) после его обработки
-`notifications` | **array** | Входящее уведомление согласно [Формату уведомлений](../notifications-format/index.md)
+`notifications` | **array** | Входящее уведомление согласно [Формату уведомлений](../notifications-format/inbound-message.md)
 
 ### Пример тела ответа {#response-example-body}
 
