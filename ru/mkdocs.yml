@@ -1,9 +1,9 @@
-site_name: GreenAPI
+site_name: Green-API
 repo_name: green-api/v1-docs
 repo_url: https://github.com/green-api/v1-docs
 edit_uri: edit/master/ru/docs/
 site_dir: build
-site_url: https://greenapi.org
+site_url: https://green-api.com
 
 nav:
   - "Главная":
