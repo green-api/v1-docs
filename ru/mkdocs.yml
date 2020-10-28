@@ -12,6 +12,10 @@ nav:
     - Блог: "/blog/index.html"
   - "Документация":
     - "Оглавление": "index.md"
+    - "Быстрый старт":
+        - "Перед началом работы": "before-start.md"
+        - "Выполнение запросов": "request-format.md"
+        - "Коллекция Postman": "postman-collection.md"    
     - "Документация API":
         - "Обзор": "api/index.md"
         - "Сообщения":
