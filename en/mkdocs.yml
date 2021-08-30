@@ -1,0 +1,109 @@
+site_name: Green-API
+repo_name: green-api/v1-docs
+repo_url: https://github.com/green-api/v1-docs
+edit_uri: edit/master/ru/docs/
+site_dir: build
+site_url: https://green-api.com
+
+nav:
+  - "Главная":
+    - Главная: "/"
+  - "Блог":
+    - Блог: "/blog/index.html"
+  - "Документация":
+    - "Оглавление": "index.md"
+    - "Быстрый старт":
+        - "Перед началом работы": "before-start.md"
+        - "Выполнение запросов": "request-format.md"
+        - "Коллекция Postman": "postman-collection.md"    
+    - "Документация API":
+        - "Обзор": "api/index.md"
+        - "Сообщения":
+            - "Текстовые сообщения": "api/messages/text.md"
+            - "Сообщения с медиаданными": "api/messages/media.md"
+        - "Рассылки":
+            - "Массовые рассылки": "api/broadcast/text.md"
+        - "Уведомления":
+            - "Получение уведомлений": "api/notifications/get.md"
+            - "Удаление уведомлений": "api/notifications/delete.md"
+        - "Формат уведомлений":
+            - "Формат входящего сообщения": "api/notifications-format/inbound-message.md"
+        - "Медиаданные":
+            - "Отправка медиаданных": "api/media/upload.md"
+            - "Получение медиаданных": "api/media/download.md"
+            - "Удаление медиаданных": "api/media/delete.md"
+        - "Прочее":
+            - "Идентификатор корреспондента и группы": "api/chat-id.md"
+            - "Форматирование в сообщениях": "api/formatting.md"
+            - "Стандартные ошибки": "api/errors.md"
+theme:
+  name: material
+  custom_dir:
+    overrides
+    # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: ru
+  features:
+    - tabs
+  palette:
+    scheme: default
+    primary: green
+    accent: green
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/green-api-logo.png
+
+extra_css:
+  - stylesheets/styles.css
+  - stylesheets/extra.css
+
+# Plugins
+plugins:
+  - search:
+      lang:
+        - en
+        - ru
+  - minify:
+      minify_html: true
+
+# Extensions
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.attr_list
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: "#"
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  # - pymdownx.highlight:
+  #     linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde

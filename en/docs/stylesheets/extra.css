@@ -1,0 +1,87 @@
+.mdl-mega-footer {
+    padding: 16px 40px;
+    color: #9e9e9e;
+    background-color: #424242;
+}
+
+.mdl-color-text--grey-700 {
+    color: #969696 !important;
+}
+
+section {
+    padding-top: 16px;
+    margin-bottom: 16px;
+}
+
+.footer-payment_line {
+    text-align: right;
+}
+
+.mdl-mega-footer__drop-down-section {
+    display: block;
+    float: left;
+}
+.mdl-mega-footer__heading {
+    position: relative;
+    width: 100%;
+    padding-right: 39.8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 23.8px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color:
+    #e0e0e0;
+}
+
+.footer-body {
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.mdl-mega-footer__bottom-section {
+    padding-top: 16px;
+    margin-bottom: 16px;
+}
+
+.mdl-mega-footer__left-section {
+    float: left;
+    margin-bottom: 16px;
+}
+
+.mdl-logo {
+    float: left;
+    margin-bottom: 0;
+    margin-right: 16px;
+}
+
+.mdl-mega-footer__middle-section {
+    display: block;
+    width: 100%;
+    height: 120px;
+}
+
+.mdl-mega-footer__right-section {
+    display: inline-block;
+    margin-left: 16px;
+    line-height: 36px;
+    vertical-align: middle;
+    font-weight: 500;
+}
+
+.mdl-mega-footer__right-section {
+    float: right;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.sg-footer {
+    background-color:  black;
+}
