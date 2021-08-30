@@ -1,0 +1,25 @@
+name: build_site
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: [ master ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Подтягиваем изменения для сайта
+      - 
+        name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
+          repository: green-api/green-api-com          
+          event-type: Build triggered by push to green-api/docs-v1 repository
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
